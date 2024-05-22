@@ -5,18 +5,18 @@ return {
 		local conform = require("conform")
 		conform.setup({
 			formatters_by_ft = {
-				javascript = { "prettier" },
-				typescript = { "prettier" },
-				javascriptreact = { "prettier" },
-				typescriptreact = { "prettier" },
-				svelte = { "prettier" },
-				css = { "prettier" },
-				html = { "prettier" },
-				json = { "prettier" },
-				yaml = { "prettier" },
-				markdown = { "prettier" },
-				graphql = { "prettier" },
-				liquid = { "prettier" },
+				javascript = { { "prettierd", "prettier" } },
+				typescript = { { "prettierd", "prettier" } },
+				javascriptreact = { { "prettierd", "prettier" } },
+				typescriptreact = { { "prettierd", "prettier" } },
+				svelte = { { "prettierd", "prettier" } },
+				css = { { "prettierd", "prettier" } },
+				html = { { "prettierd", "prettier" } },
+				json = { { "prettierd", "prettier" } },
+				yaml = { { "prettierd", "prettier" } },
+				markdown = { { "prettierd", "prettier" } },
+				graphql = { { "prettierd", "prettier" } },
+				liquid = { { "prettierd", "prettier" } },
 				php = { "php-cs-fixer" },
 				lua = { "stylua" },
 				python = { "isort", "black" },
@@ -31,8 +31,8 @@ return {
 					},
 					stdin = false,
 				},
-				prettier = {
-					command = "/home/verissimus/.local/share/nvim/mason/bin/prettier",
+				prettierd = {
+					command = "/home/verissimus/.local/share/nvim/mason/bin/prettierd",
 					-- Global options for prettier --
 					prepend_args = { "--use-tabs", "--single-quote", "--jsx-single-quote", "--bracket-same-line" },
 				},
@@ -44,7 +44,7 @@ return {
 			conform.format({
 				lsp_fallback = true,
 				async = false,
-				timeout_ms = 1000,
+				timeout_ms = 500,
 			})
 		end, { desc = "Format file" })
 	end,
