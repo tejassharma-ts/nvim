@@ -15,7 +15,7 @@ return {
 				enable_rename = true,
 				enable_close = true,
 				enable_close_on_slash = true,
-				filetypes = { "html", "xml", "typescriptreact", "php" },
+				filetypes = { "html", "xml", "typescriptreact", "php", "javascriptreact" },
 			},
 
 			-- Automatically install missing parsers when entering buffer
