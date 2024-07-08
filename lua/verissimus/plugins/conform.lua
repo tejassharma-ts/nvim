@@ -34,7 +34,7 @@ return {
 				prettierd = {
 					command = "/home/verissimus/.local/share/nvim/mason/bin/prettierd",
 					-- Global options for prettier --
-					prepend_args = { "--use-tabs", "--single-quote", "--jsx-single-quote", "--bracket-same-line" },
+					-- prepend_args = { "--use-tabs", "--single-quote", "--jsx-single-quote", "--bracket-same-line" },
 				},
 				notify_on_error = true,
 			},
