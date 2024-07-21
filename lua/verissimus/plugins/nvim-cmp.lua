@@ -64,3 +64,4 @@ return {
         vim.api.nvim_set_hl(0, "Pmenu", { fg = "#21202e", bg = "NONE" })
     end,
 }
+

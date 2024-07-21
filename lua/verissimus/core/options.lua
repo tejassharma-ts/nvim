@@ -42,9 +42,18 @@ vim.opt.updatetime = 50
 vim.o.showmode = false
 
 vim.diagnostic.config({
-    virtual_text = false,
-    underline = false,
-    severity_sort = true
+	virtual_text = true,
+	underline = false,
+	severity_sort = true,
+})
+
+local signs = { ERROR = "海", WARN = "愛", HINT = "お", INFO = "え" }
+vim.diagnostic.config({
+	virtual_text = {
+		prefix = function(diagnostic)
+			return signs[vim.diagnostic.severity[diagnostic.severity]]
+		end,
+	},
 })
 
 -- setting g:netrw_keepdir to 0 tells netrw to make vim's current directory track netrw's browsing directory.
@@ -54,4 +63,4 @@ vim.diagnostic.config({
 vim.g.netrw_banner = 0
 
 -- recursive copy of directories
-vim.g.netrw_localcopydircmd = 'cp -r'
+vim.g.netrw_localcopydircmd = "cp -r"
