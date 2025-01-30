@@ -73,12 +73,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
-vim.api.nvim_create_autocmd("BufEnter",  {
-	callback = function()
-        vim.api.nvim_command(":IBLDisable")
-	end,
-})
-
 -- vim.api.nvim_create_autocmd("BufEnter",  {
 -- 	callback = function()
 --         vim.api.nvim_command(":Gitsigns toggle_current_line_blame")

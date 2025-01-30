@@ -64,3 +64,32 @@ vim.g.netrw_banner = 0
 
 -- recursive copy of directories
 vim.g.netrw_localcopydircmd = "cp -r"
+
+-- for nvim ufo (code folding)
+-- vim.o.foldcolumn = "auto"
+-- vim.o.foldlevel = 99
+-- vim.o.foldlevelstart = 99
+-- vim.o.foldenable = true
+-- vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
+--
+-- local fcs = vim.opt.fillchars:get()
+--
+-- -- Stolen from Akinsho
+-- local function get_fold(lnum)
+-- 	if vim.fn.foldlevel(lnum) <= vim.fn.foldlevel(lnum - 1) then
+-- 		return " "
+-- 	end
+-- 	return vim.fn.foldclosed(lnum) == -1 and fcs.foldopen or fcs.foldclose
+-- end
+--
+-- _G.get_statuscol = function()
+-- 	return "%s%l " .. get_fold(vim.v.lnum) .. " "
+-- end
+--
+-- vim.o.statuscolumn = "%!v:lua.get_statuscol()"
+
+-- local capabilities = vim.lsp.protocol.make_client_capabilities()
+-- capabilities.textDocument.foldingRange = {
+--     dynamicRegistration = false,
+--     lineFoldingOnly = true
+-- }

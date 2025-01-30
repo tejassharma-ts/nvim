@@ -15,18 +15,18 @@ return {
 
 			local bubbles_theme = {
 				normal = {
-					a = { fg = "#d4b398", bg = "#3c3836", gui = "bold" },
-					b = { fg = "#d4b398", bg = "#3c3836" },
+					a = { fg = "#d4b398", bg = "#32302f", gui = "bold" },
+					b = { fg = "#d4b398", bg = "#32302f " },
 					c = { fg = colors.white },
 				},
 				insert = {
-					a = { fg = "#d4b398", bg = "#3c3836", gui = "bold" },
+					a = { fg = "#d4b398", bg = "#32302f", gui = "bold" },
 				},
 				visual = {
-					a = { fg = "#d4b398", bg = "#3c3836", gui = "bold" },
+					a = { fg = "#d4b398", bg = "#32302f", gui = "bold" },
 				},
 				replace = {
-					a = { fg = "#d4b398", bg = "#3c3836", gui = "bold" },
+					a = { fg = "#d4b398", bg = "#32302f", gui = "bold" },
 				},
 
 				inactive = {

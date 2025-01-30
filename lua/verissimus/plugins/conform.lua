@@ -5,21 +5,23 @@ return {
 		local conform = require("conform")
 		conform.setup({
 			formatters_by_ft = {
-				javascript = { { "prettierd", "prettier" } },
-				typescript = { { "prettierd", "prettier" } },
-				javascriptreact = { { "prettierd", "prettier" } },
-				typescriptreact = { { "prettierd", "prettier" } },
-				svelte = { { "prettierd", "prettier" } },
-				css = { { "prettierd", "prettier" } },
-				html = { { "prettierd", "prettier" } },
-				json = { { "prettierd", "prettier" } },
-				yaml = { { "prettierd", "prettier" } },
-				markdown = { { "prettierd", "prettier" } },
-				graphql = { { "prettierd", "prettier" } },
-				liquid = { { "prettierd", "prettier" } },
+				javascript = { "prettierd" },
+				typescript = { "prettierd" },
+				javascriptreact = { "prettierd" },
+				typescriptreact = { "prettierd" },
+				svelte = { "prettierd" },
+				css = { "prettierd" },
+				html = { "prettierd" },
+				json = { "prettierd" },
+				yaml = { "prettierd" },
+				markdown = { "prettierd" },
+				graphql = { "prettierd" },
+				liquid = { "prettierd" },
 				php = { "php-cs-fixer" },
 				lua = { "stylua" },
 				python = { "isort", "black" },
+				bash = { "shfmt" },
+				sh = { "shfmt" },
 			},
 			formatters = {
 				["php-cs-fixer"] = {
@@ -36,15 +38,17 @@ return {
 					-- Global options for prettier --
 					-- prepend_args = { "--use-tabs", "--single-quote", "--jsx-single-quote", "--bracket-same-line" },
 				},
-				notify_on_error = true,
 			},
+			notify_on_error = true,
+      notify_no_formatters = true,
+			log_level = vim.log.levels.ERROR,
 		})
 
 		vim.keymap.set("n", "<leader>f", function()
 			conform.format({
 				lsp_fallback = true,
 				async = false,
-				timeout_ms = 500,
+				timeout_ms = 2500,
 			})
 		end, { desc = "Format file" })
 	end,

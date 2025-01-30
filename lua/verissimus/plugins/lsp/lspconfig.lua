@@ -94,6 +94,26 @@ return {
 					capabilities = capabilities,
 				})
 			end,
+			["bashls"] = function()
+				lspconfig["bashls"].setup({
+					capabilities = capabilities,
+					settings = {
+						shellcheck = {
+							enable = true,
+						},
+					},
+				})
+			end,
+			["eslint"] = function()
+				lspconfig["eslint"].setup({
+					capabilities = capabilities,
+					settings = {
+						shellcheck = {
+							enable = true,
+						},
+					},
+				})
+			end,
 			["lua_ls"] = function()
 				-- configure lua server (with special settings)
 				lspconfig["lua_ls"].setup({
