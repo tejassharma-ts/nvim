@@ -10,6 +10,8 @@ return {
 		-- custom border
 		telescope.setup({
 			defaults = {
+				layout_strategy = "horizontal",
+				layout_config = { height = 0.99,  width = 0.99 },
 				prompt_prefix = "❯ ",
 				selection_caret = "❯ ",
 				file_ignore_patterns = {
@@ -28,7 +30,7 @@ return {
 				-- clear prompt
 				mappings = {
 					i = {
-						["<C-u>"] = false,
+						-- ["<C-u>"] = false,
 					},
 				},
 			},
@@ -53,16 +55,9 @@ return {
 			})
 		end, { desc = "show hidden files" })
 
-		vim.keymap.set("n", "<leader>phf", function()
-			builtin.find_files({
-				hidden = true,
-			})
-		end, { desc = "show hidden files also" })
-
-		vim.keymap.set("n", "<leader>ps", function()
-			builtin.grep_string({ search = vim.fn.input("Grep > ") })
-		end)
 		vim.keymap.set("n", "<leader>pht", builtin.help_tags, {})
 		vim.keymap.set("n", "<leader>pb", builtin.buffers, {})
+		vim.keymap.set("n", "<leader>ps", builtin.live_grep, {})
+		vim.keymap.set("n", "<leader>ts", builtin.spell_suggest, {})
 	end,
 }

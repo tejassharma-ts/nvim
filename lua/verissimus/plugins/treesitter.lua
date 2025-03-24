@@ -16,7 +16,7 @@ return {
 			-- enable indentation
 			indent = {
 				enable = true,
-				disable = { "html" },
+				disable = { "html", "c" },
 			},
 		})
 	end,

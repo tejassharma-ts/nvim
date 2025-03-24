@@ -1,3 +1,5 @@
+BORDER = "#504945"
+
 vim.opt.guicursor = ""
 
 -- disable netrw
@@ -48,6 +50,7 @@ vim.diagnostic.config({
 })
 
 local signs = { ERROR = "海", WARN = "愛", HINT = "お", INFO = "え" }
+
 vim.diagnostic.config({
 	virtual_text = {
 		prefix = function(diagnostic)
@@ -64,6 +67,9 @@ vim.g.netrw_banner = 0
 
 -- recursive copy of directories
 vim.g.netrw_localcopydircmd = "cp -r"
+
+vim.api.nvim_set_hl(0, "FloatBorder", { fg = BORDER })
+vim.api.nvim_set_hl(0, "NormalFloat", { fg = BORDER })
 
 -- for nvim ufo (code folding)
 -- vim.o.foldcolumn = "auto"
